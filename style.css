@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#container {
+  display: flex;
+  width: 400px;
+  padding: 65px 0;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f2937;
+}
+
+#title {
+  margin: 0;
+  line-height: 1;
+  margin-bottom: -5px;
+}
+
+#description {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+}
+span {
+  color: #4adf86;
+}
+
+button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#passwords {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid #2f3e53;
+  margin-top: 20px;
+  padding: 20px 0px;
+  justify-content: center;
+}
+
+.password {
+  background-color: #273549;
+  color: #4adf86;
+  height: 25px;
+  width: 100%;
+  text-align: center;
+  border-radius: 6px;
+  border: none;
+}

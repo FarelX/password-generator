@@ -5,6 +5,11 @@ A simple and beginner-friendly random password generator built as part of my ful
 
 ---
 
+## 📸 Preview
+
+![Basketball Container Screenshot](https://github.com/FarelX/password-generator/blob/main/password-generator.png)
+
+---
 ## 📌 Features
 
 - ✅ Generate strong, random passwords

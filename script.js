@@ -1,120 +1,70 @@
-const characters = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "~",
-  "`",
-  "!",
-  "@",
-  "#",
-  "$",
-  "%",
-  "^",
-  "&",
-  "*",
-  "(",
-  ")",
-  "_",
-  "-",
-  "+",
-  "=",
-  "{",
-  "[",
-  "}",
-  "]",
-  ",",
-  "|",
-  ":",
-  ";",
-  "<",
-  ">",
-  ".",
-  "?",
-  "/",
-];
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split(
+  ""
+);
+const numbers = "0123456789".split("");
+const symbols = "~`!@#$%^&*()_-+={[}],|:;<>.?/".split("");
+const numbersToggle = document.getElementById("toggle-numbers");
+const symbolsToggle = document.getElementById("toggle-symbols");
+let generateButton = document.getElementById("generate-button");
+let passwordOneEl = document.getElementById("passwordOne");
+let passwordTwoEl = document.getElementById("passwordTwo");
+const slider = document.getElementById("range-slider");
+const display = document.getElementById("value-display");
+let passwordLength = slider.value;
 
-let generateEl = document.querySelector("#generate");
-let passwordOneEl = document.querySelector("#passwordOne");
-let passwordTwoEl = document.querySelector("#passwordTwo");
-let passwordLength = 12;
-let isClicked = false;
+generateButton.addEventListener("click", function () {
+  passwordOneEl.textContent = generateRandomPassword();
+  passwordTwoEl.textContent = generateRandomPassword();
+});
 
-function getRandomCharacter() {
-  let randomChar = Math.floor(Math.random() * characters.length);
-  return characters[randomChar];
-}
+passwordOneEl.addEventListener("click", () => {
+  navigator.clipboard.writeText(passwordOneEl.textContent);
+  alert("Text Copied!");
+});
 
-function generatePassword() {
-  isClicked = true;
-  passwordOneEl.textContent = render();
-  passwordTwoEl.textContent = render();
-}
+passwordTwoEl.addEventListener("click", () => {
+  navigator.clipboard.writeText(passwordTwoEl.textContent);
+});
 
-function render() {
-  if (isClicked === true) {
-    let randomPassword = "";
-    for (i = 0; i < passwordLength; i++) {
-      randomPassword += getRandomCharacter();
-    }
-    return randomPassword;
+function generateRandomPassword() {
+  let pool = [...letters];
+  if (numbersToggle.checked) pool = pool.concat(numbers);
+  if (symbolsToggle.checked) pool = pool.concat(symbols);
+  let randomPassword = "";
+  for (let i = 0; i < Number(passwordLength); i++) {
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    randomPassword += pool[randomIndex];
   }
+  return randomPassword;
 }
+
+slider.addEventListener("input", function () {
+  passwordLength = this.value;
+  display.textContent = passwordLength;
+});
+// let generateEl = document.querySelector("#generate");
+// let passwordOneEl = document.querySelector("#passwordOne");
+// let passwordTwoEl = document.querySelector("#passwordTwo");
+// let passwordLength = 12;
+// let isClicked = false;
+
+// function getRandomCharacter() {
+//   let randomChar = Math.floor(Math.random() * characters.length);
+//   return characters[randomChar];
+// }
+
+// function generatePassword() {
+//   isClicked = true;
+//   passwordOneEl.textContent = render();
+//   passwordTwoEl.textContent = render();
+// }
+
+// function render() {
+//   if (isClicked === true) {
+//     let randomPassword = "";
+//     for (i = 0; i < passwordLength; i++) {
+//       randomPassword += getRandomCharacter();
+//     }
+//     return randomPassword;
+//   }
+// }

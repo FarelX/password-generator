@@ -12,15 +12,12 @@ A simple and beginner-friendly random password generator built as part of my ful
 ---
 ## 📌 Features
 
-- ✅ Generate strong, random passwords
-- 🧩 Choose password length (future updates)
-- 🔢 Include/exclude: (future updates)
-  - Uppercase letters
-  - Lowercase letters
+- ✅ Generate strong, random passwords (2 outputs)
+- 🎚️ Set password length using a range slider
+- 🔢 Include/exclude:
   - Numbers
   - Symbols
-- 📋 One-click copy to clipboard (future updates)
-- 🖥️ Clean and responsive UI (if responsive is included)
+- 📋 One-click copy to clipboard 
 
 ---
 
@@ -28,3 +25,13 @@ A simple and beginner-friendly random password generator built as part of my ful
 
 - **Frontend**: HTML, CSS, JavaScript  
 
+---
+
+## 🚀 How to Use
+
+1. Adjust **Password Length** with the slider.
+2. Turn **Include numbers** / **Include symbols** on or off.
+3. Click **Generate passwords**.
+4. Click a password box to copy it.
+
+> Note: Clipboard copy works best when the project is opened via `http://localhost` (for example using VS Code Live Server), because some browsers block clipboard access on `file://`.

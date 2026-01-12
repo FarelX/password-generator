@@ -34,4 +34,6 @@ A simple and beginner-friendly random password generator built as part of my ful
 3. Click **Generate passwords**.
 4. Click a password box to copy it.
 
+🔗 [Live Preview](https://farelx.github.io/password-generator/)
+
 > Note: Clipboard copy works best when the project is opened via `http://localhost` (for example using VS Code Live Server), because some browsers block clipboard access on `file://`.
